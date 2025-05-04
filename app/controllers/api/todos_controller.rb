@@ -1,5 +1,5 @@
 class Api::TodosController < ApplicationController
-  before_action :set_todo, only: %i[ show update_compleleted destroy ]
+  before_action :set_todo, only: %i[ show update_completed destroy ]
 
   # GET /todos
   def index
@@ -25,7 +25,7 @@ class Api::TodosController < ApplicationController
   end
 
   # PATCH/PUT /todos/1
-  def update_compleleted
+  def update_completed
     if @todo.update(completed: params[:completed])
       render json: @todo
     else
